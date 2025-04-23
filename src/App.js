@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import './App.css';
 
-// const API_URL = 'http://localhost:3001/api/events';
-const API_URL = 'http://localhost/backend-php/api/events';
+const API_URL = 'https://events.jossua-creuzet.fr/api/events';
 
 function App() {
   // Etat pour gérer les événements

@@ -5,8 +5,8 @@ header("Access-Control-Allow-Methods: GET,POST,PUT,DELETE");
 header("Access-Control-Max-Age: 3600");
 header("Access-Control-Allow-Headers: Content-Type, Access-Control-Allow-Headers, Authorization, X-Requested-With");
 
-include_once '../config/database.php';
-include_once '../objects/event.php';
+include_once 'config/database.php';
+include_once 'objects/event.php';
 
 $database = new Database();
 $db = $database->getConnection();
@@ -17,7 +17,7 @@ $method = $_SERVER['REQUEST_METHOD'];
 
 // Récupérer l'ID de l'URL si présent
 $request_uri = $_SERVER['REQUEST_URI'];
-$base_path = '/backend-php/api/events';
+$base_path = '/api/events';
 $id = null;
 
 if (strpos($request_uri, $base_path) === 0) {

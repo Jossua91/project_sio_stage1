@@ -1,5 +1,17 @@
 RewriteEngine On
+RewriteBase /api/
+
+# Si le fichier ou le dossier n'existe pas, rediriger vers events.php
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^api/events/?$ api/events.php [NC,L]
-RewriteRule ^api/events/([0-9]+)/?$ api/events.php?id=$1 [NC,L] 
+RewriteRule ^events/?$ events.php [NC,L]
+RewriteRule ^events/([0-9]+)/?$ events.php?id=$1 [NC,L]
+
+# Désactiver l'affichage du contenu des répertoires
+Options -Indexes
+
+# Protéger les fichiers de configuration
+<FilesMatch "^(database\.php|config\.php)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch> 

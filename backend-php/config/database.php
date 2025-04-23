@@ -1,9 +1,10 @@
 <?php
 class Database {
-    private $host = "localhost";
-    private $db_name = "events_db";
-    private $username = "root";
-    private $password = "";
+    // Utilisez les informations de votre base de données Hostinger
+    private $host = "localhost"; // ou l'hôte fourni par Hostinger
+    private $db_name = "u777610168_events_db"; // le nom de votre base de données Hostinger
+    private $username = "u777610168_events"; // votre nom d'utilisateur Hostinger
+    private $password = "ilhBGQ4ZbPpGFL"; // votre mot de passe Hostinger
     public $conn;
 
     public function getConnection() {
